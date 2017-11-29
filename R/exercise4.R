@@ -125,3 +125,10 @@ head(perf)
 
 
 performance(perf,measures = timetrain,model = mode)
+
+
+base.learners = list(
+  makeLearner("classif.ksvm"),
+  makeLearner("classif.randomForest")
+)
+lrn = makeModelMultiplexer(base.learners)
